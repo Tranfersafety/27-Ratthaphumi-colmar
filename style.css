@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
 body {
   font-family: "Noto Sans", sans-serif;
@@ -17,7 +16,7 @@ nav {
   display: flex;
   justify-content: space-between;
   height: 64px;
-  background-color: wheat;
+  background-color: #ffffff;
   .header-l {
     @media (max-width: 480px) {
       display: none;
@@ -25,8 +24,14 @@ nav {
     display: flex;
     align-items: center;
     margin: 0 24px;
-    img {
-      height: 32px;
+    a {
+      text-decoration: none;
+
+      display: flex;
+      align-items: center;
+      img {
+        height: 32px;
+      }
     }
   }
   .header-r {
@@ -129,6 +134,7 @@ nav {
     .information-sidebar-box {
       display: flex;
       flex-direction: row;
+      /* border: 1px solid #d8d8d8; */
       img {
         max-width: 35%;
         margin: 16px;
@@ -184,16 +190,12 @@ nav {
     padding: 0 72px 32px;
     column-gap: 32px;
     row-gap: 32px;
-    @media (min-width: 480px) {
-      padding: 0 72px 32px;
-      column-gap: 32px;
-      row-gap: 32px;
-    }
+
     .subject {
       display: flex;
       flex-direction: column;
       background-color: white;
-      @media (min-width: 480px) {
+      @media (min-width: 481px) {
         max-width: 31.85%;
       }
       img {
@@ -219,6 +221,101 @@ nav {
     }
   }
 }
+/* thesis */
+.thesis {
+  display: flex;
+  flex-direction: column;
+  .thesis-head {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0 16px;
+    h2 {
+      font-size: 48px;
+    }
+  }
+  .thesis-info {
+    display: flex;
+    .thesis-info-vid {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 481px) {
+        max-width: 60%;
+        margin: 16px 24px 32px 24px;
+      }
+      vid {
+        object-fit: contain;
+      }
+    }
+    .thesis-info-vid-detail {
+      @media (max-width: 480px) {
+        display: none;
+      }
+      margin: 24px 24px 0;
+      h3 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 24px;
+        margin-top: 8px;
+      }
+    }
+  }
+  .thesis-info-sidebar {
+    @media (max-width: 480px) {
+      display: none;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 40%;
+    .thesis-info-sidebar-box {
+      display: flex;
+      flex-direction: row;
+      img {
+        max-width: 35%;
+        margin: 16px;
+      }
+      .thesis-info-sidebar-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 8px;
+        h3 {
+          font-size: 32px;
+          font-weight: 700;
+        }
+        span {
+          font-size: 24px;
+        }
+      }
+    }
+    .thesis-info-sidebar-box:hover {
+      background-color: #d8d8d8;
+      transition: 1s;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      -ms-transition: 1s;
+      -o-transition: 1s;
+    }
+  }
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  .footer-l,
+  .footer-r {
+    margin: 16px 24px;
+    a {
+      text-decoration: none;
+      color: #4f4f4f;
+    }
+  }
+  .footer-r {
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+}
 
 /* Mobile */
 
@@ -234,6 +331,9 @@ nav {
     a {
       display: flex;
       align-items: center;
+    }
+    .header-l {
+      margin: 0;
     }
   }
 }
@@ -289,23 +389,37 @@ nav {
 }
 
 /* Course */
-.course {
-  @media (max-width: 480px) {
+
+@media (max-width: 480px) {
+  .course {
+    background-color: #f5f4f5;
     h2 {
       margin-bottom: 16px;
     }
+    .course-allsubject {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      padding: 0;
+      row-gap: 8px;
+      margin-bottom: 32px;
+      .subject {
+        background-color: #d8d8d8;
+      }
+    }
   }
 }
+
+/* Thesis */
 @media (max-width: 480px) {
-  .course-allsubject {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 0; /* Set padding to 0 for smaller screens */
+  .thesis-info {
+    .thesis-info-vid {
+      max-width: 100%;
+    }
   }
 }
-.subject-info p {
-  @media (max-width: 480px) {
-    margin: 0;
-    padding: 0;
+/* Footer */
+@media (max-width: 480px) {
+  .footer-l {
+    margin: 40px 16px 16px;
   }
 }

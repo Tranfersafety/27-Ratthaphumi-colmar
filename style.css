@@ -18,7 +18,7 @@ nav {
   height: 64px;
   background-color: wheat;
   .header-l {
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       display: none;
     }
     display: flex;
@@ -30,7 +30,7 @@ nav {
   }
   .header-r {
     ul {
-      @media (max-width: 768px) {
+      @media (max-width: 480px) {
         display: none;
       }
       height: 100%;
@@ -65,6 +65,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+    color: #4a4a4a;
     h1 {
       font-size: 48px;
     }
@@ -84,18 +85,87 @@ nav {
     a:hover {
       opacity: 0.6;
       transition: 0.3s;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
     }
   }
 }
 /* Information */
 .information {
   display: flex;
-}
-.information-pic {
-  max-width: 60%;
-  img {
-    max-width: 100%;
-    padding: 32px 24px;
+  flex-direction: row;
+  background-color: #f3f5f5;
+  color: #4f4f4f;
+  .information-pic {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: 32px 24px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+  .information-pic-info {
+    h2 {
+      margin: 32px 0 24px;
+      font-size: 48px;
+    }
+    p {
+      margin-bottom: 32px;
+      font-size: 24px;
+    }
+    #inf-aut {
+      font-size: 16px;
+    }
+  }
+  .information-sidebar {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 16px;
+    max-width: 40%;
+    .information-sidebar-box {
+      display: flex;
+      flex-direction: row;
+      img {
+        max-width: 35%;
+        margin: 16px;
+      }
+      .information-hidden-image {
+        @media (min-width: 480px) {
+          display: none;
+        }
+      }
+      .information-sidebar-box-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+
+        h3 {
+          font-size: 32px;
+          font-weight: 700;
+        }
+        span {
+          font-size: 24px;
+        }
+        a {
+          text-decoration: none;
+          font-size: 24;
+          color: #7fb0e8;
+        }
+      }
+    }
+    .information-sidebar-box:hover {
+      background-color: #d8d8d8;
+      transition: 1s;
+      -webkit-transition: 1s;
+      -moz-transition: 1s;
+      -ms-transition: 1s;
+      -o-transition: 1s;
+    }
   }
 }
 
@@ -105,7 +175,7 @@ nav {
 
 .mobile-head {
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     width: 100vh;
     display: flex;
     justify-content: space-around;
@@ -119,7 +189,7 @@ nav {
 
 /* Hero section */
 .hero {
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     flex-direction: column;
     img {
       max-width: 100%;
@@ -137,6 +207,32 @@ nav {
     }
     a {
       margin: 0 16px 32px;
+    }
+  }
+}
+/* Information */
+.information {
+  @media (max-width: 480px) {
+    .information-sidebar {
+      max-width: 100%;
+      padding: 0 16px 0 16px;
+
+      .information-sidebar-box {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          display: none;
+        }
+        .information-hidden-image {
+          display: flex;
+          max-width: 100%;
+          margin: 0;
+        }
+        .information-sidebar-box-info {
+          margin: 16px 16px 64px 16px;
+        }
+      }
     }
   }
 }
